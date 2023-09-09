@@ -12,6 +12,7 @@
 
 * {
     box-sizing: border-box;
+    transition: background-color 1s ease, color 1s ease;
 }
 
 html, body {
@@ -46,6 +47,15 @@ html, body {
     position: relative;
 }
 
+#difficulties {
+    align-items: center;
+    display: flex;
+}
+
+#difficulties label {
+    margin-right: 20px;
+}
+
 .start {
     height: 100%;
 }
@@ -71,7 +81,7 @@ button, select {
     padding: 20px;
     text-align: center;
     text-transform: uppercase;
-    transition-duration: .3s;
+    transition-duration: 1s;
     transition-property: background-color,border-color,color,box-shadow,filter;
 }
 
@@ -89,15 +99,6 @@ button:hover, select:hover{
 
 .stats {
     min-height: 80px;
-}
-
-#difficulties {
-    align-items: center;
-    display: flex;
-}
-
-#difficulty-label {
-    margin-right: 20px;
 }
 
 .gameover-message {

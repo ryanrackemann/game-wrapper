@@ -1,0 +1,59 @@
+.theme-toggle {
+    font-size: 30px;
+    height: 60px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 140px;
+}
+
+.theme {
+    display: none;
+}
+
+.themeLabel {
+    line-height: 60px;
+    border: 2px solid var(--secondary);
+    width: 100%;
+    height: 100%;
+    background-color: var(--opposite);
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sun, .moon {
+    display: block;
+    opacity: 0;
+    position: relative;
+    transition: opacity .5s, transform linear 0.3s;
+    width: fit-content;
+}
+
+.theme:checked + .themeLabel .moon {
+    opacity: 1;
+    transform: translateX(66px);
+}
+.theme:checked + .themeLabel .moon::before {
+    opacity: 1;
+}
+.theme:checked + .themeLabel {
+    background-color: var(--darkaccent);
+}
+
+.theme:not(:checked) + .themeLabel .sun {
+    opacity: 1;
+    transform: translateX(-66px);
+}
+
+.theme:not(:checked) + .themeLabel .sun::before {
+    opacity: 1;
+}
+
+.theme:not(:checked) + .themeLabel {
+    background-color: var(--lightaccent);
+}
