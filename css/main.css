@@ -16,15 +16,11 @@
 }
 
 html, body {
-    align-content: space-around;
     background-color: var(--main);
     color: var(--opposite);
-    display: flex;
-    flex-wrap: wrap;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     height: 100%;
-    justify-content: center;
     margin: 0;
     padding: 0;
     user-select: none;
@@ -32,6 +28,14 @@ html, body {
     -moz-user-select: none;
     -webkit-user-drag: none;
     -webkit-user-select: none;
+}
+
+body, footer {
+    align-items: center;
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    justify-items: center;
 }
 
 /* structure */
@@ -71,23 +75,48 @@ button {
     border-radius: 50px;
 }
 
-button, select {
+button, select, .portfolio-link {
     background-color: transparent;
     border: none;
     box-shadow: inset 0 0 0 2px var(--secondary);
     color: var(--opposite);
     cursor: pointer;
+    font-weight: bold;
     min-width: 160px;
     padding: 20px;
     text-align: center;
-    text-transform: uppercase;
     transition-duration: 1s;
     transition-property: background-color,border-color,color,box-shadow,filter;
 }
 
-button:hover, select:hover{
+button:hover, select:hover {
     background-color: var(--secondary);
     color: var(--opposite);
+}
+
+.portfolio-link::before {
+    content: '←';
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.portfolio-link {
+    align-items: center;
+    background: repeating-linear-gradient( -55deg, #eee, #eee 5px, #fff 5px, #fff 10px );
+    border-radius: 10px;
+    box-shadow: none;
+    color: black;
+    display: flex;
+    height: 60px;
+    opacity: 0.7;
+    padding: 12px 20px;
+    text-decoration: none;
+    transition: box-shadow 0.5s ease, opacity 0.5s ease;
+}
+
+.portfolio-link:hover {
+    box-shadow: 4px 4px var(--secondary);
+    opacity: 1;
 }
 
 .stats, .start {
@@ -151,5 +180,11 @@ button:hover, select:hover{
 
     .break__mobile {
         display: none;
+    }
+
+    .portfolio-link {
+        position: absolute;
+        left: 20px;
+        bottom: 40px;
     }
 }

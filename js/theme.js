@@ -1,11 +1,17 @@
 $(function () {
     var themes = {
         init: function () {
+            this.storageKey = 'theme'
             this.themeOptions = {
                 dark: 'dark',
                 light: 'light'
             }
-            this.currentTheme = this.themeOptions.dark
+            let storageTheme = localStorage.getItem(this.storageKey)
+            if (storageTheme == null) {
+                storageTheme = this.themeOptions.dark
+                localStorage.setItem(this.storageKey, storageTheme)
+            }
+            this.currentTheme = storageTheme
             this.darkTheme = {
                 '--main': '#2b2a33',
                 '--opposite': '#fff',
@@ -15,7 +21,7 @@ $(function () {
             this.lightTheme = {
                 '--main': '#eee',
                 '--opposite': '#000',
-                '--secondary': '#616467',
+                '--secondary': '#c1c7cc',
                 '--transparency': 'rgba(255, 255, 255, 0.5)'
             }
             this.setThemeVariables()
@@ -31,6 +37,8 @@ $(function () {
                     break
             }
 
+            localStorage.setItem(this.storageKey, this.currentTheme)
+
             this.setThemeVariables()
         },
 
@@ -38,9 +46,11 @@ $(function () {
             switch (this.currentTheme) {
                 case this.themeOptions.dark:
                     this.setDarkThemeVariables()
+                    $('.theme').prop('checked', true)
                     break
                 case this.themeOptions.light:
                     this.setLightThemeVariables()
+                    $('.theme').prop('checked', false)
                     break
             }
         },
