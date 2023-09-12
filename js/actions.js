@@ -2,6 +2,7 @@ $(function () {
 // Contains all listeners, view events, and css alterations
 
 difficulty.init()
+game.init()
 $('#difficulty').on('change', function () {
     difficulty.setDifficulty($(this).val())
 })
@@ -26,7 +27,7 @@ const game = {
 
     startScreen: {
         show: function () {
-            $('#start, #restart').removeClass('hidden')
+            $('#start').removeClass('hidden')
         },
         hide: function () {
             $('#start').addClass('hidden')
@@ -35,7 +36,7 @@ const game = {
 
     playScreen: {
         show: function () {
-            $('#stats, #game, #gameBoard').removeClass('hidden')
+            $('#stats, #game, #gameBoard, #restart').removeClass('hidden')
         },
         hide: function () {
             $('#stats, #game, #gameBoard, #lose, #win, #newHighScore, #restart').addClass('hidden')

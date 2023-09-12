@@ -14,6 +14,7 @@
     border-radius: 30px;
     cursor: pointer;
     display: flex;
+    grid-area: theme;
     height: 100%;
     justify-content: space-around;
     line-height: 60px;
@@ -52,12 +53,4 @@
 .theme:not(:checked) + .themeLabel .sun {
     opacity: 1;
     transform: translateX(-66px);
-}
-
-@media (min-width: 800px) {
-    .theme-toggle {
-        position: absolute;
-        right: 20px;
-        bottom: 40px;
-    }
 }

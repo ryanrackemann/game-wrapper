@@ -13,10 +13,17 @@
     </head>
 
     <body>
+        <header class="header">
+            <button id="restart" type="button" class="restart hidden">Restart</button>
+            <h1 class="title">Game Title</h1>
+            <div id="stats" class="stats hidden">
+                <div>⏱️ <span id="timer">--:--</span></div>
+                <div class="highScoreWrapper hidden">🏆 <span class="highScore">∞</span></div>
+            </div>
+        </header>
+
         <main>
             <div id="start" class="start">
-                <h1>Game Title</h1>
-
                 <div id="difficulties">
                     <label id="difficulty-label" for="difficulty">Choose a Difficulty:</label>
 
@@ -56,12 +63,6 @@
             </div>
 
             <div id="game" class="hidden">
-                <div id="stats" class="stats hidden">
-                    <div>⏱️ <span id="timer">--:--</span></div>
-                    <button id="restart" type="button">Restart</button>
-                    <div class="highScoreWrapper hidden">🏆 <span class="highScore">∞</span></div>
-                </div>
-
                 <div id="gameBoard" class="hidden">
                     <div id="win" class="gameover-message hidden">
                         <div class="gameover-content">
